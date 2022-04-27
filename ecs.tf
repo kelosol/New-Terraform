@@ -8,6 +8,8 @@ resource "aws_ecs_cluster" "aws-ecs-cluster" {
   }
 }
 
+# CLOUD WATCH LOGS
+/*
 resource "aws_cloudwatch_log_group" "log-group" {
   name = "${var.app_name}-${var.app_environment}-logs"
 
@@ -16,7 +18,10 @@ resource "aws_cloudwatch_log_group" "log-group" {
     Environment = var.app_environment
   }
 }
+*/
 
+# Task Definition for FARGATE (We need just EC2)
+/*
 data "template_file" "env_vars" {
   template = file("env_vars.json")
 }
@@ -69,6 +74,7 @@ resource "aws_ecs_task_definition" "aws-ecs-task" {
 data "aws_ecs_task_definition" "main" {
   task_definition = aws_ecs_task_definition.aws-ecs-task.family
 }
+*/
 
 resource "aws_ecs_service" "aws-ecs-service" {
   name                 = "${var.app_name}-${var.app_environment}-ecs-service"

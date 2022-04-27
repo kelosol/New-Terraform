@@ -11,7 +11,7 @@ private_subnets    = ["10.0.3.0/24", "10.0.4.0/24"]
 # transit_subnets    = ["100.64.0.192/28", "100.64.0.224/27"]
 
 app_name        = "iflight-neo-demo"
-app_environment = "development"
+app_environment = "poc"
 
 database_name     = "demodatabase"
 database_password = "database-password"
